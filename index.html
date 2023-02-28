@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>React using CDN</title>
 </head>
 
@@ -15,15 +16,28 @@
     </div> -->
 
     <!-- Injecting element using vanilla JS -->
+    <!-- <div id="root"></div> -->
+
+    <!-- To create a react element using createElement and to render it in DOM we need to create root element -->
     <div id="root"></div>
 
-    <script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- <script>
         // Injecting element using vanilla JS
-        const heading = document.createElement('h1');
-        heading.innerText = 'Hello React';
-        const root = document.getElementById('root');
-        root.appendChild(heading);
-    </script>
+        // const heading = document.createElement('h1');
+        // heading.innerText = 'Hello React';
+        // const root = document.getElementById('root');
+        // root.appendChild(heading);
+    </script> -->
+    <!-- <script>
+        // Injecting element using React & ReactDOM
+        const heading = React.createElement('h1', {}, 'Hello React!'); // Creates heading element using React createElement
+
+        const root = ReactDOM.createRoot(document.getElementById('root')); // Sets root
+        root.render(heading); // Adds heading to root element and renders it
+    </script> -->
+    <script src="app.js"></script>
 </body>
 
 </html>
